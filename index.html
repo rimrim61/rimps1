@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>PS1 실무역량</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:linear-gradient(to bottom,#fff7f8,#fcfcff);
+      font-family:'Noto Sans KR',sans-serif;
+      color:#6f5b5b;
+      line-height:1.7;
+    }
+
+    header{
+      width:100%;
+      padding:90px 20px;
+      text-align:center;
+
+      background:
+      linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)),
+      url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      border-bottom:1px solid #f2dddd;
+    }
+
+    .hero-box{
+      max-width:760px;
+      margin:auto;
+      background:rgba(255,255,255,0.82);
+      padding:60px 35px;
+      border-radius:28px;
+      border:2px solid #f0d9d9;
+      box-shadow:0 8px 25px rgba(232,190,190,0.25);
+      backdrop-filter:blur(5px);
+    }
+
+    .subtitle{
+      color:#b08a8a;
+      font-size:1.05rem;
+      margin-bottom:14px;
+      letter-spacing:1px;
+    }
+
+    h1{
+      font-family:'Nanum Myeongjo',serif;
+      font-size:3.3rem;
+      color:#ba7e7e;
+      line-height:1.4;
+      margin-bottom:20px;
+    }
+
+    .hero-text{
+      color:#8d7a7a;
+      font-size:1rem;
+    }
+
+    .container{
+      width:92%;
+      max-width:1200px;
+      margin:75px auto;
+    }
+
+    .section-title{
+      text-align:center;
+      font-family:'Nanum Myeongjo',serif;
+      font-size:2rem;
+      color:#bf8d8d;
+      margin-bottom:35px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:28px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.9);
+      border-radius:24px;
+      padding:30px;
+      border:1px solid #f1dede;
+      box-shadow:0 6px 18px rgba(230,200,200,0.18);
+      transition:0.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 12px 28px rgba(225,185,185,0.25);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:-30px;
+      right:-30px;
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      background:rgba(255,220,220,0.23);
+    }
+
+    .card h3{
+      position:relative;
+      z-index:1;
+      font-family:'Nanum Myeongjo',serif;
+      color:#c38484;
+      font-size:1.45rem;
+      margin-bottom:18px;
+    }
+
+    .card p,
+    .card li{
+      position:relative;
+      z-index:1;
+      color:#7d6969;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    ul li{
+      margin-bottom:14px;
+      padding-left:18px;
+      position:relative;
+    }
+
+    ul li::before{
+      content:"❀";
+      position:absolute;
+      left:0;
+      color:#e1a7a7;
+      font-size:0.8rem;
+    }
+
+    .weather-box{
+      text-align:center;
+      padding:12px 0;
+    }
+
+    .temp{
+      font-size:3rem;
+      font-weight:bold;
+      color:#d58e8e;
+    }
+
+    .weather-desc{
+      margin-top:10px;
+      font-size:1rem;
+    }
+
+    .stats{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .stat-item{
+      background:#fff7f7;
+      border:1px solid #f5e3e3;
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .stat-item strong{
+      display:block;
+      margin-top:6px;
+      font-size:1.4rem;
+      color:#cf8d8d;
+    }
+
+    footer{
+      text-align:center;
+      padding:50px 20px;
+      color:#aa9191;
+      font-size:0.95rem;
+    }
+
+    .flower{
+      display:block;
+      font-size:1.3rem;
+      margin-bottom:12px;
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:2.4rem;
+      }
+
+      .hero-box{
+        padding:45px 24px;
+      }
+
+      .section-title{
+        font-size:1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="hero-box">
+
+      <div class="subtitle">
+        부산 · 사회복지 · 실무 정보 아카이브
+      </div>
+
+      <h1>
+        PS1<br>
+        실무역량
+      </h1>
+
+      <p class="hero-text">
+        실무와 감성을 함께 담은 정보 공간 ✿<br>
+        날씨, 부산 이슈, 부경대 소식과 사회복지 통계를 한눈에 확인해보세요.
+      </p>
+
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <h2 class="section-title">
+      오늘의 정보
+    </h2>
+
+    <div class="grid">
+
+      <section class="card">
+
+        <h3>☁ 오늘의 날씨</h3>
+
+        <div class="weather-box">
+
+          <div class="temp" id="temp">
+            26°C
+          </div>
+
+          <div class="weather-desc" id="weather">
+            부산은 맑고 포근한 날씨예요 🌸
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="card">
+
+        <h3>📍 부산의 이슈</h3>
+
+        <ul>
+          <li>북항 재개발 사업 지속 추진</li>
+          <li>청년 인구 유출 문제 대응 정책 확대</li>
+          <li>부산 관광 야간 콘텐츠 활성화</li>
+          <li>글로벌 허브도시 추진 논의</li>
+        </ul>
+
+      </section>
+
+      <section class="card">
+
+        <h3>🎓 부경대 관련 뉴스</h3>
+
+        <ul>
+          <li>부경대 지역사회 연계 프로그램 확대</li>
+          <li>청년 취업 지원 비교과 과정 운영</li>
+          <li>AI·데이터 기반 융합교육 강화</li>
+          <li>학생 참여형 봉사 프로젝트 활성화</li>
+        </ul>
+
+      </section>
+
+      <section class="card">
+
+        <h3>📊 사회복지 통계</h3>
+
+        <div class="stats">
+
+          <div class="stat-item">
+            청년 우울감 경험률
+            <strong>32.5%</strong>
+          </div>
+
+          <div class="stat-item">
+            1인 가구 증가율
+            <strong>34.5%</strong>
+          </div>
+
+          <div class="stat-item">
+            청년 고립·은둔 경험
+            <strong>약 5.2%</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <span class="flower">
+      ✿ ❀ ✿
+    </span>
+
+    Designed by rimrim61 · PS1 실무역량
+
+  </footer>
+
+</body>
+</html>
