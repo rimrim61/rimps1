@@ -1,0 +1,342 @@
+아래 내용을 index.html 파일로 저장해서 GitHub에 업로드하면 돼.
+
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PS1 실무역량</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Noto Sans KR',sans-serif;
+overflow:hidden;
+background:linear-gradient(to bottom,#fff8f8,#fffdfd);
+}
+
+.desktop{
+width:100vw;
+height:100vh;
+background:
+linear-gradient(rgba(255,255,255,0.45),rgba(255,255,255,0.45)),
+url('https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+padding:30px;
+position:relative;
+}
+
+.title{
+position:absolute;
+top:25px;
+left:30px;
+font-size:2.3rem;
+font-family:'Nanum Myeongjo',serif;
+color:#b87474;
+background:rgba(255,255,255,0.75);
+padding:14px 26px;
+border-radius:22px;
+}
+
+.icon-area{
+display:flex;
+gap:30px;
+margin-top:140px;
+flex-wrap:wrap;
+}
+
+.icon{
+width:120px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+}
+
+.icon:hover{
+transform:translateY(-6px);
+}
+
+.icon img{
+width:95px;
+height:95px;
+object-fit:cover;
+border-radius:24px;
+background:white;
+padding:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+
+.icon p{
+margin-top:10px;
+background:rgba(255,255,255,0.7);
+display:inline-block;
+padding:5px 10px;
+border-radius:12px;
+font-weight:600;
+color:#7d6666;
+}
+
+.window{
+display:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:82%;
+height:78%;
+background:rgba(255,255,255,0.95);
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 18px 45px rgba(180,140,140,0.25);
+}
+
+.window-header{
+height:70px;
+background:linear-gradient(to right,#f7dede,#fff0f0);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 24px;
+}
+
+.window-title{
+font-size:1.5rem;
+font-family:'Nanum Myeongjo',serif;
+color:#b87777;
+}
+
+.close-btn{
+width:42px;
+height:42px;
+border:none;
+border-radius:50%;
+background:#efb6b6;
+color:white;
+font-size:1rem;
+cursor:pointer;
+}
+
+.window-content{
+padding:30px;
+height:calc(100% - 70px);
+overflow-y:auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+}
+
+.card{
+background:#fffafa;
+padding:28px;
+border-radius:24px;
+border:1px solid #f1dddd;
+}
+
+.card h3{
+font-family:'Nanum Myeongjo',serif;
+color:#c08080;
+margin-bottom:14px;
+}
+
+.card p,
+.card li{
+line-height:1.9;
+color:#776666;
+}
+
+.weather{
+font-size:3rem;
+font-weight:bold;
+color:#d18c8c;
+margin-top:10px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+margin-bottom:10px;
+}
+
+.gallery-item{
+background:white;
+padding:14px;
+border-radius:22px;
+text-align:center;
+}
+
+.welcome{
+margin-top:90px;
+max-width:760px;
+background:rgba(255,255,255,0.75);
+padding:45px;
+border-radius:32px;
+}
+
+.welcome h1{
+font-family:'Nanum Myeongjo',serif;
+font-size:4rem;
+color:#b56f7f;
+margin-bottom:18px;
+}
+
+.welcome p{
+line-height:2;
+color:#7b6969;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="desktop">
+
+<div class="title">
+PS1 실무역량 ✿
+</div>
+
+<div class="welcome">
+<h1>주먹밥 쿵야</h1>
+<p>
+아이콘을 누르면 각각의 창이 열리는 윈도우 스타일 홈페이지예요 🌸<br>
+부산 날씨, 사회복지 뉴스, 부경대학교 뉴스와 쿵야 갤러리를 볼 수 있어요.
+</p>
+</div>
+
+<div class="icon-area">
+
+<div class="icon" onclick="openWindow('weatherWindow')">
+<img src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
+<p>부산 날씨</p>
+</div>
+
+<div class="icon" onclick="openWindow('welfareWindow')">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048941.png">
+<p>사회복지 뉴스</p>
+</div>
+
+<div class="icon" onclick="openWindow('pknuWindow')">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+<p>부경대 뉴스</p>
+</div>
+
+<div class="icon" onclick="openWindow('galleryWindow')">
+<img src="https://i.pinimg.com/736x/df/cd/9b/dfcd9bdfbf1dc2aab11ea7f4d63f7a8d.jpg">
+<p>쿵야 갤러리</p>
+</div>
+
+</div>
+
+<div class="window" id="weatherWindow">
+<div class="window-header">
+<div class="window-title">☀ 부산 날씨</div>
+<button class="close-btn" onclick="closeWindow('weatherWindow')">✕</button>
+</div>
+<div class="window-content">
+<div class="grid">
+<div class="card">
+<h3>오늘의 부산</h3>
+<div class="weather">26°C</div>
+<p>오늘 부산은 맑고 포근한 날씨예요 🌿</p>
+</div>
+<div class="card">
+<h3>부산 이슈</h3>
+<p>북항 재개발 · 청년정책 확대 · 관광 활성화</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="window" id="welfareWindow">
+<div class="window-header">
+<div class="window-title">📊 사회복지 뉴스</div>
+<button class="close-btn" onclick="closeWindow('welfareWindow')">✕</button>
+</div>
+<div class="window-content">
+<div class="grid">
+<div class="card">
+<h3>청년 우울감 증가</h3>
+<p>청년 정신건강 문제가 중요한 사회 이슈로 떠오르고 있어요.</p>
+<div class="weather">32.5%</div>
+</div>
+<div class="card">
+<h3>1인 가구 증가</h3>
+<p>사회적 고립 문제도 함께 증가하고 있습니다.</p>
+<div class="weather">34.5%</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="window" id="pknuWindow">
+<div class="window-header">
+<div class="window-title">🎓 부경대학교 뉴스</div>
+<button class="close-btn" onclick="closeWindow('pknuWindow')">✕</button>
+</div>
+<div class="window-content">
+<div class="grid">
+<div class="card">
+<h3>AI 융합교육 확대</h3>
+<p>부경대학교는 AI·데이터 기반 교육을 강화하고 있어요.</p>
+</div>
+<div class="card">
+<h3>봉사 프로그램 활성화</h3>
+<p>학생 참여형 사회복지 봉사활동이 확대되고 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="window" id="galleryWindow">
+<div class="window-header">
+<div class="window-title">🍙 쿵야 갤러리</div>
+<button class="close-btn" onclick="closeWindow('galleryWindow')">✕</button>
+</div>
+<div class="window-content">
+<div class="gallery">
+<div class="gallery-item">
+<img src="https://i.pinimg.com/736x/df/cd/9b/dfcd9bdfbf1dc2aab11ea7f4d63f7a8d.jpg">
+<p>기본 쿵야</p>
+</div>
+<div class="gallery-item">
+<img src="https://i.pinimg.com/736x/f2/9f/18/f29f184f8702b6fe0d77c7d31fefb90b.jpg">
+<p>졸린 쿵야</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+function openWindow(id){
+document.getElementById(id).style.display='block';
+}
+
+function closeWindow(id){
+document.getElementById(id).style.display='none';
+}
+</script>
+
+</body>
+</html>
